@@ -14,4 +14,7 @@ spec:
         spec:
             containers:
             - name: loyalty-system
-            image: loyalty-system:latest    
+                image: loyalty-system:latest
+                ports:
+                    - name: web
+                        containerPort: 80
