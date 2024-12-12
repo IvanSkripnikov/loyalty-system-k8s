@@ -6,8 +6,7 @@ spec:
     selector:
         app: loyalty-system-app
     ports:
-        - protocol: TCP
-            port: 8080
-            targetPort: web
+    - protocol: TCP
+      port: 8080
+      targetPort: web
     type: NodePort
-    
