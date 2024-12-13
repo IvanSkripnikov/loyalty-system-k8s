@@ -10,7 +10,7 @@ spec:
   - host: arch.homework
     http:
       paths:
-        - path: /loyalty-system($|/)(.*)
+        - path: /*
           pathType: Prefix
           backend:
             service: 
