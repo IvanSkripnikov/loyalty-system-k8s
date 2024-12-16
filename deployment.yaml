@@ -17,4 +17,4 @@ spec:
               image: tramak/loyalty-system:latest
               ports:
                 - name: web
-                  containerPort: 80
+                  containerPort: 8080
