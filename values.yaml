@@ -6,8 +6,6 @@ image:
   tag: latest
   pullPolicy: IfNotPresent  
 
-imageFull: tramak/loyalty-system:latest
-
 service:
   type: NodePort
   protocol: TCP
@@ -19,15 +17,18 @@ ingress:
   port: 8080
 
 mysql:
-  enabled: false
+  enabled: true
   host: mysql  
   mysqlDriver: mysql
   mysqlRootPassword: test
   mysqlDatabase: loyalty_system
-  mysqlUser: admin
+  mysqlUser: root
   mysqlPassword: test
+  imagePath: mysql:8.0
   service:
-    port: 3306    
+    port: 3306
+    name: mysql
+    type: NodePort
   initdbScripts:
     initdb.sql: |-
       CREATE DATABASE IF NOT EXISTS loyalty_system DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
@@ -38,3 +39,5 @@ mysql:
     persistence:
       enabled: false
       storageClass: standard
+  terminationGracePeriodSeconds: 10
+  storeName: mysql-store

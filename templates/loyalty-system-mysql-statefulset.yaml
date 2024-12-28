@@ -5,22 +5,22 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mysql
-  serviceName: mysql
+      app: {{ .Values.mysql.service.name }}
+  serviceName: {{ .Values.mysql.service.name }}
   replicas: 1
   template:
     metadata:
       labels:
-        app: mysql
+        app: {{ .Values.mysql.service.name }}
     spec:
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: {{ .Values.mysql.terminationGracePeriodSeconds }}
       containers:
-      - name: mysql
-        image: mysql:8.0
+      - name: {{ .Values.mysql.service.name }}
+        image: {{ .Values.mysql.imagePath }}
         ports:
-        - containerPort: 3306
+        - containerPort: {{ .Values.mysql.service.port }}
         volumeMounts:
-        - name: mysql-store
+        - name: {{ .Values.mysql.storeName }}
           mountPath: /var/lib/mysql
         env:
           - name: MYSQL_ROOT_PASSWORD
@@ -30,7 +30,7 @@ spec:
                 key: mysqlRootPassword
   volumeClaimTemplates:
   - metadata:
-      name: mysql-store
+      name: {{ .Values.mysql.storeName }}
     spec:
       accessModes: ["ReadWriteOnce"]
       storageClassName: standard
