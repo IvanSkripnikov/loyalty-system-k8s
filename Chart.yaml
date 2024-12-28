@@ -1,0 +1,13 @@
+apiVersion: v2
+name: loyalty-system
+description: A Helm chart for Loyalty System Service
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+
+dependencies:
+  - name: mysql
+    version: 8.5.1
+    repository: https://raw.githubusercontent.com/bitnami/charts/refs/heads/archive-full-index/bitnami
+    condition: mysql.enabled
+    alias: mysql

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "loyalty-system.name" . }}-config-map
+  labels:
+    app: mysql
+    app.kubernetes.io/name: mysql
+data:
+  dbname: "{{ .Values.mysql.mysqlDatabase }}"
+  dbAddress: "{{ .Values.mysql.host }}"
+  dbPort: "{{ .Values.mysql.service.port }}"
+  dbDriver: "{{ .Values.mysql.mysqlDriver }}"

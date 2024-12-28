@@ -1,0 +1,40 @@
+replicaCount: 2
+
+image:
+  hostname: docker.io
+  repository: /tramak/loyalty-system
+  tag: latest
+  pullPolicy: IfNotPresent  
+
+imageFull: tramak/loyalty-system:latest
+
+service:
+  type: NodePort
+  protocol: TCP
+  port: 8080
+  name: web
+
+ingress:
+  className: nginx
+  port: 8080
+
+mysql:
+  enabled: false
+  host: mysql  
+  mysqlDriver: mysql
+  mysqlRootPassword: test
+  mysqlDatabase: loyalty_system
+  mysqlUser: admin
+  mysqlPassword: test
+  service:
+    port: 3306    
+  initdbScripts:
+    initdb.sql: |-
+      CREATE DATABASE IF NOT EXISTS loyalty_system DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE USER 'admin'@'%' IDENTIFIED BY 'test';
+      GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+      FLUSH PRIVILEGES;
+  primary:    
+    persistence:
+      enabled: false
+      storageClass: standard
