@@ -41,10 +41,22 @@ spec:
                   name: {{ $fullName }}-secrets
                   key: dbPassword
             - name: DB_NAME
-              value: "loyalty_system"
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: dbname
             - name: DB_ADDRESS
-              value: "mysql"
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: dbAddress
             - name: DB_PORT
-              value: "3306"
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: dbPort
             - name: DB_DRIVER
-              value: "mysql"                                                                                                                                                  
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: dbDriver                                                                                                                                                  

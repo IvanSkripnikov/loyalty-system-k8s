@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 1
 
 image:
   hostname: docker.io
@@ -18,17 +18,17 @@ ingress:
 
 mysql:
   enabled: true
-  host: mysql  
+  host: loyalty-system-mysql  
   mysqlDriver: mysql
   mysqlRootPassword: test
   mysqlDatabase: loyalty_system
-  mysqlUser: root
+  mysqlUser: admin
   mysqlPassword: test
   imagePath: mysql:8.0
   service:
     port: 3306
     name: mysql
-    type: NodePort
+    type: ClusterIP
   initdbScripts:
     initdb.sql: |-
       CREATE DATABASE IF NOT EXISTS loyalty_system DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
