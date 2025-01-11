@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "f70d7db8-0f05-47ce-b012-c100b9cf73ec",
+		"name": "HomeWork",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6555391"
+	},
+	"item": [
+		{
+			"name": "/v1/users/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"administer\", \"first_name\": \"John\", \"last_name\": \"Doe\", \"email\": \"johndoe@example.com\", \"phone\": \"+7800800800\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{loyalty-system-host}}/v1/users/create",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{loyalty-system-host}}/v1/users/get/1",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1, \"username\": \"administer1\", \"first_name\": \"John1\", \"last_name\": \"Doe1\", \"email\": \"1johndoe@example.com\", \"phone\": \"+7800800801\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{loyalty-system-host}}/v1/users/update",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/v1/users/delete/1",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/v1/users/list",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

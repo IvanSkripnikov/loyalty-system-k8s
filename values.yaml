@@ -20,7 +20,6 @@ mysql:
   enabled: true
   host: loyalty-system-mysql  
   mysqlDriver: mysql
-  mysqlRootPassword: test
   mysqlDatabase: loyalty_system
   mysqlUser: admin
   mysqlPassword: test
