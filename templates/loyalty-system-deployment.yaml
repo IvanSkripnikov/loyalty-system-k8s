@@ -29,6 +29,9 @@ spec:
               port: {{ .Values.service.port }}
             initialDelaySeconds: 60
             periodSeconds: 30
+          volumeMounts:
+            - name: {{ $fullName }}-persistent-storage
+              mountPath: /var/lib/mysql
           env:
             - name: DB_USER
               valueFrom:
@@ -59,4 +62,8 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
-                  key: dbDriver                                                                                                                                                  
+                  key: dbDriver
+      volumes:
+      - name: {{ $fullName }}-persistent-storage
+        persistentVolumeClaim:
+          claimName: {{ $fullName }}-pv-claim                                                                                                                                            
