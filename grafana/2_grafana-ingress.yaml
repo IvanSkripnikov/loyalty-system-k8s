@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana-ui
+  namespace: monitoring
 spec:
   ingressClassName: nginx
   rules:
