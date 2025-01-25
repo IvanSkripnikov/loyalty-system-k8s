@@ -6,9 +6,38 @@ metadata:
     name: prometheus-server-conf
   namespace: monitoring
 data:
+  prometheus.rules: |-
+    groups:
+    - name: Error alert
+      rules:
+      - alert: Internal Error
+        expr: response_http_status{status="500"} > 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: Error Happened
+          description: "Internal Error (500 code) Happened In Application"
+      - alert: Latency
+        expr: http_request_latency_summary{quantile="0.99"} > 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: Long Latency
+          description: "There Are Were Requests With Big Latency ( > 0.99s)"
+
   prometheus.yml: |
     global:
       scrape_interval: 15s
+
+    rule_files:
+      - /etc/prometheus/prometheus.rules
+
+    alerting:
+      alertmanagers:
+      - static_configs:
+        - targets: ['alertmanager.browser']
 
     scrape_configs:
       - job_name: 'loyalty-system'
