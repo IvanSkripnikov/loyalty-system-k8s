@@ -21,8 +21,6 @@ mysql:
   host: loyalty-system-mysql  
   mysqlDriver: mysql
   mysqlDatabase: loyalty_system
-  mysqlUser: admin
-  mysqlPassword: test
   imagePath: mysql:8.0
   service:
     port: 3306
