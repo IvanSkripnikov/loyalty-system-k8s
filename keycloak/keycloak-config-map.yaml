@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-config-map
+  namespace: keycloak
+  labels:
+    app: keycloak
+data:
+  kcProxy: "edge"
+  kcHealthEnabled: "true"

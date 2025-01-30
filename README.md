@@ -17,8 +17,9 @@ newman run loyalty-system\tests\hw.json --global-var "loyalty-system-host=http:/
 For access to services use addresses:
 
 ```shell
-http://arch.homework/health - for main service
-http://prometheus.browser - for Prometheus
-http://grafana.browser - for Grafana
-http://alertmanager.browser - for Prometheus AlertManager
+http://arch.homework/health - for main service (port 8080)
+http://prometheus.browser - for Prometheus (port 9090)
+http://grafana.browser - for Grafana (port 3000)
+http://alertmanager.browser - for Prometheus AlertManager (port 9093)
+http://keycloak.browser - for Keyclock (port 8080)
 ```
