@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authenticator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authenticator
+  template:
+    metadata:
+      labels:
+        app: authenticator
+    spec:
+      containers:
+        - name: authenticator
+          image: tramak/authenticator:latest
+          ports:
+            - containerPort: 8080
+              name: authenticator
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          volumeMounts:
+            - name: loyalty-system-persistent-storage
+              mountPath: /var/lib/mysql
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: loyalty-system-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: loyalty-system-secrets
+                  key: dbPassword
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: loyalty-system-config-map
+                  key: dbname
+            - name: DB_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: loyalty-system-config-map
+                  key: dbAddress
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: loyalty-system-config-map
+                  key: dbPort
+            - name: DB_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: loyalty-system-config-map
+                  key: dbDriver
+      volumes:
+      - name: loyalty-system-persistent-storage
+        persistentVolumeClaim:
+          claimName: loyalty-system-pv-claim                                                                                                                                            

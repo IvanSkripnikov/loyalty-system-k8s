@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: authenticator-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: authenticator.browser
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: authenticator-service
+              port: 
+                number: 8080

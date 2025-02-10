@@ -2,6 +2,7 @@ install-services:
 	helm install loyalty-system loyalty-system\.
 update-manifests:
 	kubectl apply -f keycloak\. && \
+	kubectl apply -f authenticator\. && \
 	kubectl apply -f monitoring\. && \
 	cd monitoring && \
 	kubectl apply -f prometheus\. && \
