@@ -38,3 +38,6 @@ mysql:
       storageClass: standard
   terminationGracePeriodSeconds: 10
   storeName: mysql-store
+
+redirectAuthUrl: http://arch.homework
+redirectAuthServiceUrl: http://authenticator.default.svc.cluster.local:8080

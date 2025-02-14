@@ -12,41 +12,41 @@ spec:
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080
         - path: /signin
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080
         - path: /logout
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080
         - path: /register
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080
         - path: /auth
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080
         - path: /sessions
           pathType: Prefix
           backend:
             service: 
-              name: authenticator-service
+              name: authenticator
               port: 
                 number: 8080

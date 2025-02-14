@@ -11,7 +11,7 @@ make run
 When the application is up, run tests:
 
 ```shell
-newman run loyalty-system\tests\hw.json --global-var "loyalty-system-host=http://arch.homework"
+newman run loyalty-system\tests\hw6.json --global-var "loyalty-system-host=http://arch.homework"
 ```
 
 For access to services use addresses:
@@ -21,5 +21,4 @@ http://arch.homework/health - for main service (port 8080)
 http://prometheus.browser - for Prometheus (port 9090)
 http://grafana.browser - for Grafana (port 3000)
 http://alertmanager.browser - for Prometheus AlertManager (port 9093)
-http://keycloak.browser - for Keyclock (port 8080)
 ```
