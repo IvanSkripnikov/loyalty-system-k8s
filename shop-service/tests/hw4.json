@@ -21,9 +21,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/create",
+					"raw": "{{shop-service-host}}/v1/users/create",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -52,9 +52,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/get/1",
+					"raw": "{{shop-service-host}}/v1/users/get/1",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -81,9 +81,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/update",
+					"raw": "{{shop-service-host}}/v1/users/update",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -100,9 +100,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/delete/1",
+					"raw": "{{shop-service-host}}/v1/users/delete/1",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -120,9 +120,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/list",
+					"raw": "{{shop-service-host}}/v1/users/list",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",

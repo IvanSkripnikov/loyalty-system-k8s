@@ -1,5 +1,5 @@
 apiVersion: v2
-name: loyalty-system
+name: shop-service
 description: A Helm chart for Loyalty System Service
 type: application
 version: 0.1.0

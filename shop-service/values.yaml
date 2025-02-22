@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   hostname: docker.io
-  repository: /tramak/loyalty-system
+  repository: /tramak/shop-service
   tag: latest
   pullPolicy: IfNotPresent  
 
@@ -18,7 +18,7 @@ ingress:
 
 mysql:
   enabled: true
-  host: loyalty-system-mysql  
+  host: shop-service-mysql  
   mysqlDriver: mysql
   mysqlDatabase: loyalty_system
   imagePath: mysql:8.0

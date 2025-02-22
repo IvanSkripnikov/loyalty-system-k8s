@@ -11,7 +11,7 @@ make run
 When the application is up, run tests:
 
 ```shell
-newman run loyalty-system\tests\hw6.json --global-var "loyalty-system-host=http://arch.homework"
+newman run shop-service\tests\hw6.json --global-var "shop-service-host=http://arch.homework"
 ```
 
 For access to services use addresses:

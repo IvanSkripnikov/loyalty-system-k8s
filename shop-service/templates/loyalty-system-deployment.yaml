@@ -1,4 +1,4 @@
-{{- $fullName := include "loyalty-system.name" . -}}
+{{- $fullName := include "shop-service.name" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: {{ include "loyalty-system.image" . }}
+          image: {{ include "shop-service.image" . }}
           ports:
             - name: {{ .Values.service.name }}
               containerPort: {{ .Values.service.port }}

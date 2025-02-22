@@ -40,7 +40,7 @@ data:
         - targets: ['alertmanager.browser']
 
     scrape_configs:
-      - job_name: 'loyalty-system'
+      - job_name: 'shop-service'
         metrics_path: '/metrics'
         static_configs:
           - targets: ['arch.homework']

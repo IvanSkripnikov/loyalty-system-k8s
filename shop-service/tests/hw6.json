@@ -24,9 +24,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/register",
+					"raw": "{{shop-service-host}}/register",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"register"
@@ -53,9 +53,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/login",
+					"raw": "{{shop-service-host}}/login",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"login"
@@ -73,9 +73,9 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/auth",
+					"raw": "{{shop-service-host}}/auth",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"auth"
@@ -93,9 +93,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -124,9 +124,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -146,9 +146,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -168,9 +168,9 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/logout",
+					"raw": "{{shop-service-host}}/logout",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"logout"
@@ -188,9 +188,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -219,9 +219,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/register",
+					"raw": "{{shop-service-host}}/register",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"register"
@@ -248,9 +248,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/login",
+					"raw": "{{shop-service-host}}/login",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"login"
@@ -268,9 +268,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -290,9 +290,9 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/logout",
+					"raw": "{{shop-service-host}}/logout",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"logout"
@@ -310,9 +310,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/me",
+					"raw": "{{shop-service-host}}/v1/users/me",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -341,9 +341,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/login",
+					"raw": "{{shop-service-host}}/login",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"login"
@@ -370,9 +370,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/get/2",
+					"raw": "{{shop-service-host}}/v1/users/get/2",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",
@@ -393,9 +393,9 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{loyalty-system-host}}/logout",
+					"raw": "{{shop-service-host}}/logout",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"logout"
@@ -422,9 +422,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/login",
+					"raw": "{{shop-service-host}}/login",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"login"
@@ -451,9 +451,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{loyalty-system-host}}/v1/users/get/2",
+					"raw": "{{shop-service-host}}/v1/users/get/2",
 					"host": [
-						"{{loyalty-system-host}}"
+						"{{shop-service-host}}"
 					],
 					"path": [
 						"v1",

@@ -17,8 +17,8 @@ data:
     receivers:
     - name: alert-emailer
       email_configs:
-      - to: loyalty-system@email.com
+      - to: shop-service@email.com
         send_resolved: false
-        from: loyalty-system-notificator@email.com
+        from: shop-service-notificator@email.com
         smarthost: smtp.eample.com:25
         require_tls: false

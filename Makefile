@@ -1,5 +1,5 @@
 install-services:
-	helm install loyalty-system loyalty-system\.
+	helm install shop-service shop-service\.
 update-manifests:	
 	kubectl apply -f authenticator\. && \
     kubectl apply -f monitoring\. && \

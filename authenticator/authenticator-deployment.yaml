@@ -29,40 +29,40 @@ spec:
             initialDelaySeconds: 60
             periodSeconds: 30
           volumeMounts:
-            - name: loyalty-system-persistent-storage
+            - name: shop-service-persistent-storage
               mountPath: /var/lib/mysql
           env:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: loyalty-system-secrets
+                  name: shop-service-secrets
                   key: dbUser
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: loyalty-system-secrets
+                  name: shop-service-secrets
                   key: dbPassword
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
-                  name: loyalty-system-config-map
+                  name: shop-service-config-map
                   key: dbname
             - name: DB_ADDRESS
               valueFrom:
                 configMapKeyRef:
-                  name: loyalty-system-config-map
+                  name: shop-service-config-map
                   key: dbAddress
             - name: DB_PORT
               valueFrom:
                 configMapKeyRef:
-                  name: loyalty-system-config-map
+                  name: shop-service-config-map
                   key: dbPort
             - name: DB_DRIVER
               valueFrom:
                 configMapKeyRef:
-                  name: loyalty-system-config-map
+                  name: shop-service-config-map
                   key: dbDriver
       volumes:
-      - name: loyalty-system-persistent-storage
+      - name: shop-service-persistent-storage
         persistentVolumeClaim:
-          claimName: loyalty-system-pv-claim                                                                                                                                            
+          claimName: shop-service-pv-claim                                                                                                                                            

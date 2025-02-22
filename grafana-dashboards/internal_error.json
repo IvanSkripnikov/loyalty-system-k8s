@@ -70,7 +70,7 @@
           "options": {
             "mode": "exclude",
             "names": [
-              "{__name__=\"response_http_status\", instance=\"arch.homework\", job=\"loyalty-system\", status=\"500\"}"
+              "{__name__=\"response_http_status\", instance=\"arch.homework\", job=\"shop-service\", status=\"500\"}"
             ],
             "prefix": "All except:",
             "readOnly": true
