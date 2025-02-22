@@ -1,5 +1,6 @@
 install-services:
-	helm install shop-service shop-service\.
+	helm install shop-service shop-service\. && \
+	helm install orders-service orders-service\.
 update-manifests:	
 	kubectl apply -f authenticator\. && \
     kubectl apply -f monitoring\. && \
