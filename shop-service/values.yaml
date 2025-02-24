@@ -41,3 +41,4 @@ mysql:
 
 redirectAuthUrl: http://arch.homework
 redirectAuthServiceUrl: http://authenticator.default.svc.cluster.local:8080
+billingServiceUrl: http://billing-service-service.default.svc.cluster.local:8080

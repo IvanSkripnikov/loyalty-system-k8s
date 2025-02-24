@@ -20,7 +20,7 @@ mysql:
   enabled: true
   host: billing-service-mysql  
   mysqlDriver: mysql
-  mysqlDatabase: orders
+  mysqlDatabase: accounts
   imagePath: mysql:8.0
   service:
     port: 3306

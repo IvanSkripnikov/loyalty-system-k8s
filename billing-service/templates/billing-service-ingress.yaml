@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
-  - host: arch.homework
+  - host: billing.browser
     http:
       paths:
         - path: /

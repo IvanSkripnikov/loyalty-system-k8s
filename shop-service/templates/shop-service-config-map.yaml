@@ -12,3 +12,4 @@ data:
   dbDriver: "{{ .Values.mysql.mysqlDriver }}"
   redirectAuthUrl: "{{ .Values.redirectAuthUrl }}"
   redirectAuthServiceUrl: "{{ .Values.redirectAuthServiceUrl }}"
+  billingServiceUrl: "{{ .Values.billingServiceUrl }}"
