@@ -39,6 +39,14 @@ mysql:
   terminationGracePeriodSeconds: 10
   storeName: mysql-store
 
+redis:
+  host: redis-server.default.svc.cluster.local
+  port: 6379
+  dbNumber: 0
+  stream: notification
+
 redirectAuthUrl: http://arch.homework
 redirectAuthServiceUrl: http://authenticator.default.svc.cluster.local:8080
 billingServiceUrl: http://billing-service-service.default.svc.cluster.local:8080
+ordersServiceUrl: http://orders-service-service.default.svc.cluster.local:8080
+notificationServiceUrl: http://notification-service-service.default.svc.cluster.local:8080

@@ -6,6 +6,7 @@ install-services:
 update-manifests:	
 	kubectl apply -f authenticator\. && \
     kubectl apply -f monitoring\. && \
+	kubectl apply -f redis\. && \
 	cd monitoring && \
 	kubectl apply -f prometheus\. && \
 	kubectl apply -f alert-manager\. && \

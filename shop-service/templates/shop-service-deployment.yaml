@@ -73,6 +73,46 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: redirectAuthServiceUrl
+            - name: BILLING_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: billingServiceUrl
+            - name: ORDERS_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: ordersServiceUrl
+            - name: NOTIFICATION_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: notificationServiceUrl
+            - name: REDIS_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisAddress
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisPort
+            - name: REDIS_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisPassword
+            - name: REDIS_DB_NUMBER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisDBNumber
+            - name: REDIS_STREAM
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisStream
       volumes:
       - name: {{ $fullName }}-persistent-storage
         persistentVolumeClaim:
