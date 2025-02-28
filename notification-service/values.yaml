@@ -38,3 +38,9 @@ mysql:
       storageClass: standard
   terminationGracePeriodSeconds: 10
   storeName: mysql-store
+
+redis:
+  host: redis-server.default.svc.cluster.local
+  port: 6379
+  dbNumber: 0
+  stream: notification

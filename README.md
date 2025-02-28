@@ -11,7 +11,7 @@ make run
 When the application is up, run tests:
 
 ```shell
-newman run shop-service\tests\hw6.json --global-var "shop-service-host=http://arch.homework"
+newman run additionals\tests\hw7.json --global-var "shop-service-host=http://arch.homework" --global-var "orders-service-host=http://orders.browser" --global-var "billing-service-host=http://billing.browser" --global-var "notification-service-host=http://notification.browser"
 ```
 
 For access to services use addresses:
@@ -21,4 +21,12 @@ http://arch.homework/health - for main service (port 8080)
 http://prometheus.browser - for Prometheus (port 9090)
 http://grafana.browser - for Grafana (port 3000)
 http://alertmanager.browser - for Prometheus AlertManager (port 9093)
+```
+
+For test access to services data use addresses:
+
+```shell
+http://billing.browser/health - for billing service (port 8080)
+http://orders.browser/health - for orders service (port 8080)
+http://notification.browser/health - for notification service (port 8080)
 ```

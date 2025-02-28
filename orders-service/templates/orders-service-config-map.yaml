@@ -10,5 +10,3 @@ data:
   dbAddress: "{{ .Values.mysql.host }}"
   dbPort: "{{ .Values.mysql.service.port }}"
   dbDriver: "{{ .Values.mysql.mysqlDriver }}"
-  redirectAuthUrl: "{{ .Values.redirectAuthUrl }}"
-  redirectAuthServiceUrl: "{{ .Values.redirectAuthServiceUrl }}"

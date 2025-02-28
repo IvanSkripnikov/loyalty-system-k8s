@@ -63,16 +63,31 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: dbDriver
-            - name: REDIRECT_URL
+            - name: REDIS_ADDRESS
               valueFrom:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
-                  key: redirectAuthUrl
-            - name: REDIRECT_SERViCE_URL
+                  key: redisAddress
+            - name: REDIS_PORT
               valueFrom:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
-                  key: redirectAuthServiceUrl
+                  key: redisPort
+            - name: REDIS_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisPassword
+            - name: REDIS_DB_NUMBER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisDBNumber
+            - name: REDIS_STREAM
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: redisStream
       volumes:
       - name: {{ $fullName }}-persistent-storage
         persistentVolumeClaim:

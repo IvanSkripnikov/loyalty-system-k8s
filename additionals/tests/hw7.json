@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "4a4ea400-5911-4608-a69f-3701aaafd160",
+		"name": "HomeWork 7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6555391"
+	},
+	"item": [
+		{
+			"name": "get accounts before registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"administer\", \"password\": \"pwd\", \"email\": \"tramak@mail.com\", \"first_name\": \"Tramak\", \"last_name\": \"Rambo\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"administer\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders before buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/list",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications before buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/list",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buy item apple",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy/1",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/list",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications after buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/list",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

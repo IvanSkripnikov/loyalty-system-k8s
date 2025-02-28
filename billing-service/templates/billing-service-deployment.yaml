@@ -63,16 +63,6 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: dbDriver
-            - name: REDIRECT_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redirectAuthUrl
-            - name: REDIRECT_SERViCE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redirectAuthServiceUrl
       volumes:
       - name: {{ $fullName }}-persistent-storage
         persistentVolumeClaim:
