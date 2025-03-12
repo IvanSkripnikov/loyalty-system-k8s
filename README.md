@@ -11,7 +11,7 @@ make run
 When the application is up, run tests:
 
 ```shell
-newman run additionals\tests\hw7.json --global-var "shop-service-host=http://arch.homework" --global-var "orders-service-host=http://orders.browser" --global-var "billing-service-host=http://billing.browser" --global-var "notification-service-host=http://notification.browser"
+newman run additionals\tests\hw8.json --global-var "shop-service-host=http://arch.homework" --global-var "orders-service-host=http://orders.browser" --global-var "billing-service-host=http://billing.browser" --global-var "notification-service-host=http://notification.browser" --global-var "warehouse-service-host=http://warehouse.browser" --global-var "delivery-service=http://delivery.browser"
 ```
 
 For access to services use addresses:
@@ -29,4 +29,7 @@ For test access to services data use addresses:
 http://billing.browser/health - for billing service (port 8080)
 http://orders.browser/health - for orders service (port 8080)
 http://notification.browser/health - for notification service (port 8080)
+http://warehouse.browser/health - for warehouse service (port 8080)
+http://delivery.browser/health - for delivery service (port 8080)
+http://npayment.browser/health - for payments service (port 8080)
 ```

@@ -1,4 +1,4 @@
-{{- $fullName := include "orders-service.name" . -}}
+{{- $fullName := include "delivery-service.name" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: {{ include "orders-service.image" . }}
+          image: {{ include "delivery-service.image" . }}
           ports:
             - name: {{ .Values.service.name }}
               containerPort: {{ .Values.service.port }}
@@ -63,46 +63,6 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: dbDriver
-            - name: PAYMENT_SERVICE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: paymentServiceUrl
-            - name: WAREHOUSE_SERVICE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: warehouseServiceUrl
-            - name: DELIVERY_SERVICE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: deliveryServiceUrl
-            - name: REDIS_ADDRESS
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redisAddress
-            - name: REDIS_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redisPort
-            - name: REDIS_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redisPassword
-            - name: REDIS_DB_NUMBER
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redisDBNumber
-            - name: REDIS_STREAM
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $fullName }}-config-map
-                  key: redisStream
       volumes:
       - name: {{ $fullName }}-persistent-storage
         persistentVolumeClaim:

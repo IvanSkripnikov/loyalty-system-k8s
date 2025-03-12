@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   hostname: docker.io
-  repository: /tramak/orders-service
+  repository: /tramak/delivery-service
   tag: latest
   pullPolicy: IfNotPresent  
 
@@ -18,9 +18,9 @@ ingress:
 
 mysql:
   enabled: true
-  host: orders-service-mysql  
+  host: delivery-service-mysql  
   mysqlDriver: mysql
-  mysqlDatabase: orders
+  mysqlDatabase: delivery
   imagePath: mysql:8.0
   service:
     port: 3306
@@ -28,7 +28,7 @@ mysql:
     type: ClusterIP
   initdbScripts:
     initdb.sql: |-
-      CREATE DATABASE IF NOT EXISTS orders DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS delivery DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
       CREATE USER 'admin'@'%' IDENTIFIED BY 'test';
       GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
       FLUSH PRIVILEGES;
@@ -38,13 +38,3 @@ mysql:
       storageClass: standard
   terminationGracePeriodSeconds: 10
   storeName: mysql-store
-
-redis:
-  host: redis-server.default.svc.cluster.local
-  port: 6379
-  dbNumber: 0
-  stream: notification
-
-paymentServiceUrl: http://payment.default.svc.cluster.local:8080
-warehouseServiceUrl: http://warehouse-service-service.default.svc.cluster.local:8080
-deliveryServiceUrl: http://delivery-service-service.default.svc.cluster.local:8080
