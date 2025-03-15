@@ -10,6 +10,7 @@ update-manifests:
 	kubectl apply -f payment-service\. && \
     kubectl apply -f monitoring\. && \
 	kubectl apply -f redis\. && \
+	kubectl apply -f phpmyadmin\. && \
 	cd monitoring && \
 	kubectl apply -f prometheus\. && \
 	kubectl apply -f alert-manager\. && \
