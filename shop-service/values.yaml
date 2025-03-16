@@ -29,6 +29,11 @@ mysql:
   initdbScripts:
     initdb.sql: |-
       CREATE DATABASE IF NOT EXISTS loyalty_system DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS warehouses DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS orders DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS notifications DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS delivery DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      CREATE DATABASE IF NOT EXISTS accounts DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
       CREATE USER 'admin'@'%' IDENTIFIED BY 'test';
       GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
       FLUSH PRIVILEGES;
@@ -47,6 +52,15 @@ redis:
 
 redirectAuthUrl: http://arch.homework
 redirectAuthServiceUrl: http://authenticator.default.svc.cluster.local:8080
-billingServiceUrl: http://billing-service-service.default.svc.cluster.local:8080
-ordersServiceUrl: http://orders-service-service.default.svc.cluster.local:8080
-notificationServiceUrl: http://notification-service-service.default.svc.cluster.local:8080
+billingServiceUrl: http://billing-service.default.svc.cluster.local:8080
+ordersServiceUrl: http://orders-service.default.svc.cluster.local:8080
+notificationServiceUrl: http://notification-service.default.svc.cluster.local:8080
+paymentServiceUrl: http://payment.default.svc.cluster.local:8080
+warehouseServiceUrl: http://warehouse-service.default.svc.cluster.local:8080
+deliveryServiceUrl: http://delivery-service.default.svc.cluster.local:8080
+
+mysqlDatabaseWarehouse: warehouses
+mysqlDatabaseOrders: orders
+mysqlDatabaseNotifications: notifications
+mysqlDatabaseDelivery: delivery
+mysqlDatabaseAccounts: accounts

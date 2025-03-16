@@ -1,12 +1,12 @@
 install-services:
-	helm install shop-service shop-service\. && \
-	helm install orders-service orders-service\. && \
-	helm install billing-service billing-service\. && \
-	helm install notification-service notification-service\. && \
-	helm install warehouse-service warehouse-service\. && \
-	helm install delivery-service delivery-service\.
+	helm install shop-service shop-service\.
 update-manifests:	
 	kubectl apply -f authenticator\. && \
+	kubectl apply -f notification-service\. && \
+	kubectl apply -f billing-service\. && \
+	kubectl apply -f delivery-service\. && \
+	kubectl apply -f warehouse-service\. && \
+	kubectl apply -f orders-service\. && \
 	kubectl apply -f payment-service\. && \
     kubectl apply -f monitoring\. && \
 	kubectl apply -f redis\. && \

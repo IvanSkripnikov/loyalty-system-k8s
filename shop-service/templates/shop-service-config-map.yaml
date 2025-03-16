@@ -7,6 +7,11 @@ metadata:
     app.kubernetes.io/name: mysql
 data:
   dbname: "{{ .Values.mysql.mysqlDatabase }}"
+  dbNameWarehouse: "{{ .Values.mysqlDatabaseWarehouse }}"
+  dbNameOrders: "{{ .Values.mysqlDatabaseOrders }}"
+  dbNameNotifications: "{{ .Values.mysqlDatabaseNotifications }}"
+  dbNameDelivery: "{{ .Values.mysqlDatabaseDelivery }}"
+  dbNameAccounts: "{{ .Values.mysqlDatabaseAccounts }}"
   dbAddress: "{{ .Values.mysql.host }}"
   dbPort: "{{ .Values.mysql.service.port }}"
   dbDriver: "{{ .Values.mysql.mysqlDriver }}"
@@ -15,6 +20,9 @@ data:
   billingServiceUrl: "{{ .Values.billingServiceUrl }}"
   ordersServiceUrl: "{{ .Values.ordersServiceUrl }}"
   notificationServiceUrl: "{{ .Values.notificationServiceUrl }}"
+  paymentServiceUrl: "{{ .Values.paymentServiceUrl }}"
+  warehouseServiceUrl: "{{ .Values.warehouseServiceUrl }}"
+  deliveryServiceUrl: "{{ .Values.deliveryServiceUrl }}"
   redisAddress: "{{ .Values.redis.host }}"
   redisPort: "{{ .Values.redis.port }}"
   redisPassword: ""

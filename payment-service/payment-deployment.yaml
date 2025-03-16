@@ -17,7 +17,7 @@ spec:
           image: tramak/payment-service:latest
           ports:
             - containerPort: 8080
-              name: authenticator
+              name: payment
           readinessProbe:
             tcpSocket:
               port: 8080

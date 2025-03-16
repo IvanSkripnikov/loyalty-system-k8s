@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: warehouse-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: warehouse-app
+  template:
+    metadata:
+      labels:
+        app: warehouse-app
+    spec:
+      containers:
+        - name: warehouse
+          image: tramak/warehouse-service:latest
+          ports:
+            - name: warehouse
+              containerPort: 8080
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          volumeMounts:
+            - name: shop-service-persistent-storage
+              mountPath: /var/lib/mysql
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbPassword
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbNameWarehouse
+            - name: DB_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbAddress
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbPort
+            - name: DB_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbDriver
+      volumes:
+      - name: shop-service-persistent-storage
+        persistentVolumeClaim:
+          claimName: shop-service-pv-claim                                                                                                                                            
