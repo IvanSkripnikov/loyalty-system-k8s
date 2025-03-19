@@ -11,7 +11,7 @@ make run
 When the application is up, run tests:
 
 ```shell
-newman run additionals\tests\hw8.json --global-var "shop-service-host=http://arch.homework" --global-var "orders-service-host=http://orders.browser" --global-var "billing-service-host=http://billing.browser" --global-var "notification-service-host=http://notification.browser" --global-var "warehouse-service-host=http://warehouse.browser" --global-var "delivery-service=http://delivery.browser"
+newman run additionals\tests\hw9.json --global-var "shop-service-host=http://arch.homework" --global-var "orders-service-host=http://orders.browser" --global-var "billing-service-host=http://billing.browser" --global-var "notification-service-host=http://notification.browser" --global-var "warehouse-service-host=http://warehouse.browser" --global-var "delivery-service=http://delivery.browser"
 ```
 
 For access to services use addresses:

@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "190ea101-a81f-464c-80c8-9dd7abfdfb5d",
+		"name": "Homework 9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6555391"
+	},
+	"item": [
+		{
+			"name": "show items in warehouse in the begining",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{warehouse-service-host}}/v1/warehouses/get/1",
+					"host": [
+						"{{warehouse-service-host}}"
+					],
+					"path": [
+						"v1",
+						"warehouses",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts before registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\", \"email\": \"user1@mail.com\", \"first_name\": \"User1\", \"last_name\": \"Unknown1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make first deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make first deposit again (duplicate)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make second deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after second deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make second deposit duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 100}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after second deposit duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders before buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user buy item apple success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"volume\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after buy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user buy item apple duplicate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"volume\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after buy duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after buy duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user buy item next time",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"volume\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after second bought",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after second bought",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user buy item next time duplicate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"volume\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after second bought duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after second bought duplicate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show items in warehouse in the end",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{warehouse-service-host}}/v1/warehouses/get/1",
+					"host": [
+						"{{warehouse-service-host}}"
+					],
+					"path": [
+						"v1",
+						"warehouses",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

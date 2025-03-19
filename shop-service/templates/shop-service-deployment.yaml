@@ -88,6 +88,11 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: notificationServiceUrl
+            - name: PAYMENT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: paymentServiceUrl
             - name: REDIS_ADDRESS
               valueFrom:
                 configMapKeyRef:

@@ -12,6 +12,7 @@ data:
   dbNameNotifications: "{{ .Values.mysqlDatabaseNotifications }}"
   dbNameDelivery: "{{ .Values.mysqlDatabaseDelivery }}"
   dbNameAccounts: "{{ .Values.mysqlDatabaseAccounts }}"
+  dbNamePayments: "{{ .Values.mysqlDatabasePayments }}"
   dbAddress: "{{ .Values.mysql.host }}"
   dbPort: "{{ .Values.mysql.service.port }}"
   dbDriver: "{{ .Values.mysql.mysqlDriver }}"

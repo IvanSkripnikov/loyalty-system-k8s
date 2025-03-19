@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment
+  template:
+    metadata:
+      labels:
+        app: payment
+    spec:
+      containers:
+        - name: payment
+          image: tramak/payment-service:latest
+          ports:
+            - containerPort: 8080
+              name: payment
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbPassword
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbNamePayments
+            - name: DB_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbAddress
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbPort
+            - name: DB_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbDriver
+            - name: BILLING_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: billingServiceUrl                                                                                                                            
