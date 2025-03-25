@@ -20,7 +20,7 @@ mysql:
   enabled: true
   host: shop-service-mysql  
   mysqlDriver: mysql
-  mysqlDatabase: loyalty_system
+  mysqlDatabase: shop
   imagePath: mysql:8.0
   service:
     port: 3306
@@ -28,6 +28,7 @@ mysql:
     type: ClusterIP
   initdbScripts:
     initdb.sql: |-
+      CREATE DATABASE IF NOT EXISTS shop DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
       CREATE DATABASE IF NOT EXISTS loyalty_system DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
       CREATE DATABASE IF NOT EXISTS warehouses DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
       CREATE DATABASE IF NOT EXISTS orders DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
@@ -59,6 +60,7 @@ notificationServiceUrl: http://notification-service.default.svc.cluster.local:80
 paymentServiceUrl: http://payment.default.svc.cluster.local:8080
 warehouseServiceUrl: http://warehouse-service.default.svc.cluster.local:8080
 deliveryServiceUrl: http://delivery-service.default.svc.cluster.local:8080
+shopServiceUrl: http://shop-service.default.svc.cluster.local:8080
 
 mysqlDatabaseWarehouse: warehouses
 mysqlDatabaseOrders: orders
@@ -66,3 +68,4 @@ mysqlDatabaseNotifications: notifications
 mysqlDatabaseDelivery: delivery
 mysqlDatabaseAccounts: accounts
 mysqlDatabasePayments: payments
+mysqlDatabaseLoyaltySystem: loyalty_system

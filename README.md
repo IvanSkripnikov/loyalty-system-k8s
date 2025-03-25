@@ -31,5 +31,6 @@ http://orders.browser/health - for orders service (port 8080)
 http://notification.browser/health - for notification service (port 8080)
 http://warehouse.browser/health - for warehouse service (port 8080)
 http://delivery.browser/health - for delivery service (port 8080)
-http://npayment.browser/health - for payments service (port 8080)
+http://payment.browser/health - for payments service (port 8080)
+http://loyalty-system.browser/health - for loyalty system service (port 8080)
 ```

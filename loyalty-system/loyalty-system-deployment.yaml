@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loyalty-system-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loyalty-system-app
+  template:
+    metadata:
+      labels:
+        app: loyalty-system-app
+    spec:
+      containers:
+        - name: loyalty-system
+          image: tramak/loyalty-system:latest
+          ports:
+            - name: loyalty-system
+              containerPort: 8080
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          volumeMounts:
+            - name: shop-service-persistent-storage
+              mountPath: /var/lib/mysql
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: shop-service-secrets
+                  key: dbPassword
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbNameOrders
+            - name: DB_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbAddress
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbPort
+            - name: DB_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: dbDriver
+            - name: PAYMENT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: paymentServiceUrl
+            - name: BILLING_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: billingServiceUrl
+            - name: SHOP_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: shopServiceUrl
+            - name: ORDERS_SERViCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: ordersServiceUrl
+            - name: REDIS_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: redisAddress
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: redisPort
+            - name: REDIS_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: redisPassword
+            - name: REDIS_DB_NUMBER
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: redisDBNumber
+            - name: REDIS_STREAM
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: redisStream
+      volumes:
+      - name: shop-service-persistent-storage
+        persistentVolumeClaim:
+          claimName: shop-service-pv-claim                                                                                                                                            

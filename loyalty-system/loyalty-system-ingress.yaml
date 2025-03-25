@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: loyalty-system-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: loyalty-system.browser
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service: 
+              name: loyalty-system-service
+              port: 
+                number: 8080
