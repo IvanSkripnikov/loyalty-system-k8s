@@ -26,6 +26,7 @@ data:
   warehouseServiceUrl: "{{ .Values.warehouseServiceUrl }}"
   deliveryServiceUrl: "{{ .Values.deliveryServiceUrl }}"
   shopServiceUrl: "{{ .Values.shopServiceUrl }}"
+  loyaltySystemServiceUrl: "{{ .Values.loyaltySystemServiceUrl }}"
   redisAddress: "{{ .Values.redis.host }}"
   redisPort: "{{ .Values.redis.port }}"
   redisPassword: ""

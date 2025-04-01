@@ -93,6 +93,11 @@ spec:
                 configMapKeyRef:
                   name: {{ $fullName }}-config-map
                   key: paymentServiceUrl
+            - name: LOYALTY_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $fullName }}-config-map
+                  key: loyaltySystemServiceUrl
             - name: REDIS_ADDRESS
               valueFrom:
                 configMapKeyRef:

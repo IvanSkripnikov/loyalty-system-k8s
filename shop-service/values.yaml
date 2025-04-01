@@ -60,7 +60,8 @@ notificationServiceUrl: http://notification-service.default.svc.cluster.local:80
 paymentServiceUrl: http://payment.default.svc.cluster.local:8080
 warehouseServiceUrl: http://warehouse-service.default.svc.cluster.local:8080
 deliveryServiceUrl: http://delivery-service.default.svc.cluster.local:8080
-shopServiceUrl: http://shop-service.default.svc.cluster.local:8080
+shopServiceUrl: http://shop-service-service.default.svc.cluster.local:8080
+loyaltySystemServiceUrl: http://loyalty-system-service.default.svc.cluster.local:8080
 
 mysqlDatabaseWarehouse: warehouses
 mysqlDatabaseOrders: orders

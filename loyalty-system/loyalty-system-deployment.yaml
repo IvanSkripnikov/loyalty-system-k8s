@@ -46,7 +46,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: shop-service-config-map
-                  key: dbNameOrders
+                  key: dbNameLoyaltySystem
             - name: DB_ADDRESS
               valueFrom:
                 configMapKeyRef:

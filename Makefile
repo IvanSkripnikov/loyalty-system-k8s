@@ -8,6 +8,7 @@ update-manifests:
 	kubectl apply -f warehouse-service\. && \
 	kubectl apply -f orders-service\. && \
 	kubectl apply -f payment-service\. && \
+	kubectl apply -f loyalty-system\. && \
     kubectl apply -f monitoring\. && \
 	kubectl apply -f redis\. && \
 	kubectl apply -f phpmyadmin\. && \

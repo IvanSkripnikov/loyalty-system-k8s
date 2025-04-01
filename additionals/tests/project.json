@@ -1,0 +1,5153 @@
+{
+	"info": {
+		"_postman_id": "277388bc-ac10-4d15-8e02-16b993311ba9",
+		"name": "Loyalty System Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6555391"
+	},
+	"item": [
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see item categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager create new items category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\": \"Furniture\", \"description\": \"Different furniture for home\", \"user_category_id\": 1, \"active\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see new item categories list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager change new category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 6, \"title\": \"Furniture\", \"description\": \"The best furniture for your home\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/update",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see changed item category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/get/6",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"get",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager delete new category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/remove/6",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"remove",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see item categories list after delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/item-category/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"item-category",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager add new item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\": \"Evgeny Onegin\", \"description\": \"Russian classic from Pushkin\", \"price\": 15, \"category_id\": 5, \"user_category_id\": 1, \"active\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see items list after add new item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager change new item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 13, \"price\": 25}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/update",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see changed item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/get/13",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"get",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager remove added item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/remove/13",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"remove",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see items list after delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager add promocode 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":1, \\\"value\\\":200,\\\"itemCategory\\\":0,\\\"item\\\":0}\",\r\n    \"expired\": \"2025-05-05 19:55:02\",\r\n    \"title\": \"Promocode easter\",\r\n    \"typeId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list after adding promocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager change added promocode",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":1, \\\"value\\\":250,\\\"itemCategory\\\":0,\\\"item\\\":0}\",\r\n    \"expired\": \"2025-05-05 19:55:02\",\r\n    \"title\": \"Promocode easter edited\",\r\n    \"typeId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/update",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see new loyalty after update",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get/6",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager delete new promocode",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/remove/6",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"remove",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list after delete promocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty configuration list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/configuration/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"configuration",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager change configuration",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"active\": 1,\r\n    \"id\": 1,\r\n    \"property\": \"trigger_minimal_orders_sum\",\r\n    \"value\": \"12000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/configuration/update",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"configuration",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty configuration list after update",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/configuration/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"configuration",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts before registration user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\", \"email\": \"user1@mail.com\", \"first_name\": \"User1\", \"last_name\": \"Unknown1\", \"phone\": \"+79094702595\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 1000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 1 see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications before add loyalty user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/2",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after loyalty analyser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications after add loyalty user 1 Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/2",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders before purchase user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 1 buy item mp3 player success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-11",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase mp3 player",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications after purchase user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/2",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 2000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after purchase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager add certificate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":1, \\\"value\\\":500,\\\"itemCategory\\\":0,\\\"item\\\":0}\",\r\n    \"expired\": \"2025-05-05 19:55:02\",\r\n    \"title\": \"1234567890\",\r\n    \"typeId\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after create gift certificate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user1\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 1 buy computer game braid success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"volume\": 1,\r\n    \"certificate\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase computer game",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/2",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase computer game user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/2",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 1 after purchase game braid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/2",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user2\", \"password\": \"pwd\", \"email\": \"user2@mail.com\", \"first_name\": \"User2\", \"last_name\": \"Unknown2\", \"phone\": \"+79094702590\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user2\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-21",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 20000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 2 after loyalty system work",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/3",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager add promocode 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":1, \\\"value\\\":200,\\\"itemCategory\\\":0,\\\"item\\\":0}\",\r\n    \"expired\": \"2025-05-30 19:55:02\",\r\n    \"title\": \"Promocode spring\",\r\n    \"typeId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list after add new promocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after add new promocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user2\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 2 see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders before purchase user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/3",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 2 buy item car moscvich 412 success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-21",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/3",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 2 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/3",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 2 buy item mp3 player with promocode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-22",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"volume\": 1,\r\n    \"promocode\": \"Promocode spring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after second purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase 2 user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/3",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 2 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/3",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-22",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 10000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user2\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 2 buy item vacuum cleaner success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-23",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after third purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase 3 user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/3",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 2 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/3",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user2\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 2 buy item bananas success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-24",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"volume\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after fourth purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/3",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase 4 user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/3",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 2 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/3",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user3\", \"password\": \"pwd\", \"email\": \"user3@mail.com\", \"first_name\": \"User3\", \"last_name\": \"Unknown3\", \"phone\": \"+79094702591\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user3\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-31",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 90000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/5",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user3\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 3 see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders before purchase user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/4",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 3 buy item tv success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-31",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"volume\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/4",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/4",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 3 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/4",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3 after work loyalty system",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user3\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 3 buy apples success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-32",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"volume\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/4",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase 2 user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/4",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 3 after purchase 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/4",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager add temporary discount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":2, \\\"value\\\":50,\\\"itemCategory\\\":0,\\\"item\\\":0,\\\"fromDate\\\":\\\"2025-01-01 00:00:00\\\",\\\"toDate\\\":\\\"2025-06-06 00:00:00\\\"}\",\r\n    \"expired\": \"2025-05-30 19:55:02\",\r\n    \"title\": \"One half during one half!!!\",\r\n    \"typeId\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/create",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user3\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 3 buy uno success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-33",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/4",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders after purchase 3 user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/4",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 3 after purchase 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/4",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager change added temporary discount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9,\r\n    \"active\": 1,\r\n    \"data\": \"{\\\"type\\\":2, \\\"value\\\":50,\\\"itemCategory\\\":0,\\\"item\\\":0,\\\"fromDate\\\":\\\"2025-01-01 00:00:00\\\",\\\"toDate\\\":\\\"2025-06-06 00:00:00\\\"}\",\r\n    \"expired\": \"2025-02-02 19:55:02\",\r\n    \"title\": \"One half during one half!!!\",\r\n    \"typeId\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/update",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see changed loyalty",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get/9",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3 before loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 before loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 before loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty deactivation expired",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/remove-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"remove-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 3 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/4",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 2 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/3",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 1 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/2",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user4\", \"password\": \"pwd\", \"email\": \"user4@mail.com\", \"first_name\": \"User4\", \"last_name\": \"Unknown4\", \"phone\": \"+79094702592\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/register",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user4\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth data user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/auth",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accounts after registration user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/list",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make deposit user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-41",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 20000000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/users/me/deposit",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"me",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after deposit",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/5",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 4 see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/5",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/5",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/5",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/5",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 4 after loyalty system work",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/5",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user4\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 4 see items list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/list",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 4 buy bmw i8 success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-41",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/5",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders user 4 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/5",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 4 after purchase",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/5",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/5",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "system loyalty actualization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{loyalty-system-host}}/test/run-loyalty",
+					"host": [
+						"{{loyalty-system-host}}"
+					],
+					"path": [
+						"test",
+						"run-loyalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 4 after loyalty system work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/5",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"user4\", \"password\": \"pwd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user 4 buy moscwich  412 success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "11111-111111111-1111-42",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"volume\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/v1/items/buy",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"items",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get balance after purchase 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{billing-service-host}}/v1/account/get-balance/5",
+					"host": [
+						"{{billing-service-host}}"
+					],
+					"path": [
+						"v1",
+						"account",
+						"get-balance",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders user 4 after purchase 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{orders-service-host}}/v1/orders/get-by-user/5",
+					"host": [
+						"{{orders-service-host}}"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"get-by-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notifications user 4 after purchase 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{notification-service-host}}/v1/notifications/get/5",
+					"host": [
+						"{{notification-service-host}}"
+					],
+					"path": [
+						"v1",
+						"notifications",
+						"get",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user 4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shop-service-host}}/login",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager see loyalty list for user 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/v1/loyalty/get-for-user/5",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"v1",
+						"loyalty",
+						"get-for-user",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{shop-service-host}}/logout",
+					"host": [
+						"{{shop-service-host}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

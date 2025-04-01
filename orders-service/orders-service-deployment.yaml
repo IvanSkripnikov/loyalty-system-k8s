@@ -77,6 +77,11 @@ spec:
                 configMapKeyRef:
                   name: shop-service-config-map
                   key: deliveryServiceUrl
+            - name: LOYALTY_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: shop-service-config-map
+                  key: loyaltySystemServiceUrl
             - name: REDIS_ADDRESS
               valueFrom:
                 configMapKeyRef:
