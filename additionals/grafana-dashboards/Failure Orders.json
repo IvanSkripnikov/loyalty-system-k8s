@@ -15,11 +15,10 @@
       }
     ]
   },
-  "description": "Count of requests per second",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 9,
+  "id": 7,
   "links": [],
   "panels": [
     {
@@ -27,7 +26,7 @@
         "type": "prometheus",
         "uid": "aeim4wnnv4ohse"
       },
-      "description": "Shows count of requests by services",
+      "description": "Shows count of failure orders",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -111,7 +110,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "increase(http_requests_total[$__rate_interval])",
+          "expr": "failure_orders",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -120,7 +119,7 @@
           "useBackend": false
         }
       ],
-      "title": "RPC",
+      "title": "Failure Orders",
       "type": "timeseries"
     }
   ],
@@ -137,7 +136,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "RPC",
-  "uid": "beim4kt954lq8c",
-  "version": 3
+  "title": "Failure Orders",
+  "uid": "deim4jde0ix34b",
+  "version": 2
 }

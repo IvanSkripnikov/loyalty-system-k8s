@@ -15,11 +15,10 @@
       }
     ]
   },
-  "description": "Count of requests per second",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 9,
+  "id": 10,
   "links": [],
   "panels": [
     {
@@ -27,7 +26,7 @@
         "type": "prometheus",
         "uid": "aeim4wnnv4ohse"
       },
-      "description": "Shows count of requests by services",
+      "description": "Cont sent Messages",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -111,7 +110,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "increase(http_requests_total[$__rate_interval])",
+          "expr": "increase(sent_messages_total[$__rate_interval])",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -120,7 +119,7 @@
           "useBackend": false
         }
       ],
-      "title": "RPC",
+      "title": "Sent Messages",
       "type": "timeseries"
     }
   ],
@@ -137,7 +136,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "RPC",
-  "uid": "beim4kt954lq8c",
-  "version": 3
+  "title": "Sent Messages",
+  "uid": "feim4lqwtvg1sf",
+  "version": 2
 }

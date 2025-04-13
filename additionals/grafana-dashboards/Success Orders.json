@@ -15,11 +15,11 @@
       }
     ]
   },
-  "description": "Count of requests per second",
+  "description": "Shows count of success orders by time",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 9,
+  "id": 11,
   "links": [],
   "panels": [
     {
@@ -27,7 +27,7 @@
         "type": "prometheus",
         "uid": "aeim4wnnv4ohse"
       },
-      "description": "Shows count of requests by services",
+      "description": "Display success orders by time",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -111,7 +111,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "increase(http_requests_total[$__rate_interval])",
+          "expr": "increase(success_orders[$__rate_interval])",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -120,7 +120,7 @@
           "useBackend": false
         }
       ],
-      "title": "RPC",
+      "title": "Success Orders",
       "type": "timeseries"
     }
   ],
@@ -137,7 +137,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "RPC",
-  "uid": "beim4kt954lq8c",
-  "version": 3
+  "title": "Success Orders",
+  "uid": "eeim4mnzugjcwb",
+  "version": 6
 }

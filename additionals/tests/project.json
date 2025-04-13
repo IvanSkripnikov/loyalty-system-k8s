@@ -281,7 +281,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\": 13, \"price\": 25}",
+					"raw": "{\"id\": 14, \"price\": 25}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -308,7 +308,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{shop-service-host}}/v1/items/get/13",
+					"raw": "{{shop-service-host}}/v1/items/get/14",
 					"host": [
 						"{{shop-service-host}}"
 					],
@@ -316,7 +316,7 @@
 						"v1",
 						"items",
 						"get",
-						"13"
+						"14"
 					]
 				}
 			},
@@ -328,7 +328,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{shop-service-host}}/v1/items/remove/13",
+					"raw": "{{shop-service-host}}/v1/items/remove/14",
 					"host": [
 						"{{shop-service-host}}"
 					],
@@ -336,7 +336,7 @@
 						"v1",
 						"items",
 						"remove",
-						"13"
+						"14"
 					]
 				}
 			},
@@ -3079,7 +3079,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{billing-service-host}}/v1/account/get-balance/5",
+					"raw": "{{billing-service-host}}/v1/account/get-balance/4",
 					"host": [
 						"{{billing-service-host}}"
 					],
@@ -3087,7 +3087,7 @@
 						"v1",
 						"account",
 						"get-balance",
-						"5"
+						"4"
 					]
 				}
 			},

@@ -44,3 +44,31 @@ data:
         metrics_path: '/metrics'
         static_configs:
           - targets: ['arch.homework']
+      - job_name: 'billing-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['billing.browser']
+      - job_name: 'orders-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['orders.browser']
+      - job_name: 'notification-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['notification.browser']
+      - job_name: 'delivery-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['delivery.browser']
+      - job_name: 'payment-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['payment.browser']
+      - job_name: 'loyalty-system-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['loyalty-system.browser']
+      - job_name: 'warehouse-service'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['warehouse.browser']
